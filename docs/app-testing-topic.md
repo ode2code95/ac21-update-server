@@ -17,7 +17,8 @@ As our title implies, today we'll be focusing primarily on the latter category.
   - This shorter feedback loop maximizes developer efficiency. Suggested goal for execution speed: 1 ms, 1000 tests per second
 
 ## The Onion Architecture
-- Onion Architecture (aka "Bicylce wheel design"): ![Onion sketch](img/onion_architecture.png)
+![Onion sketch](img/onion_architecture.png)
+- Also known as the "Bicylce wheel design"
   - Core in the center.
   - Meat (business rules, domain model, on the Inside.
   - I/O (storage, UI (interactions with the world)) on the Outside.
@@ -56,7 +57,7 @@ Define 'pure' vs 'impure'. Pure code is free from side effects.
     - [Example from the forum](https://codeblocks.olivetree.software/t/getting-people-interested-in-testing/471/20?u=ode2code) of a pure unit test.
 - Get rid of [Shared Mutable State](https://2ality.com/2019/10/shared-mutable-state.html)
   - Employ the copy-and-update strategy.
-  - Read-only functions (and values) are fine, if you need them (in F#, this would be done through [partial Application](https://en.wikipedia.org/wiki/Partial_application)).  
+  - Read-only functions (and values) are fine, if you need them (in F#, this would be done through [partial application](https://en.wikipedia.org/wiki/Partial_application)).  
 
 ## Function Signatures
 Some of this may be more applicable to strongly typed languaes. Those of you JS fans out there, just know that with 'great power comes great responsibility.'
