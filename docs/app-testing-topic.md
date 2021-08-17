@@ -71,7 +71,7 @@ Some of this may be more applicable to strongly typed languaes. Those of you JS 
   - Return as strict a type as possible
   - Make your functions more composable.
 
-Takeaways:
+## Takeaways:
 - Properly structured code makes writing tests easier, and the intent of the tests clearer, so that maintaining the tests doesn't become so expensive in terms of time.
 - *Well-built* tests make excellent documentation. Readable tests are a critical component of this objective.
 - Tests enable confident releases amid iterative releases in agile workflows.
@@ -79,7 +79,7 @@ Takeaways:
   - No. But FP idioms can help you craft better, less imperative code, while still being OOP.
   - Static, pure functions, etc.
 
-Resources:
+## Resources:
 - https://dotnetcoretutorials.com/2021/06/19/mocks-vs-stubs-vs-fakes-in-unit-testing/
 - https://codeblocks.olivetree.software/t/getting-people-interested-in-testing/471
 - https://lispcast.com/what-is-the-onion-architecture/
