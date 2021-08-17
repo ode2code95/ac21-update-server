@@ -1,8 +1,4 @@
-## I. WHAT IS DOCKER?
-[Joke about title: Dolphin/Whale, etc.]
-
-Slide 1: Docker Logo:
-### I. Definitions
+## I. What is Docker? - Definitions
 - In a Nutshell, Docker is an ecosystem for packaging a *web* app *and* its host environment into a consumer-ready deliverable.
 - Is a containerization (not virtualization) platform.
   - Is NOT the hypervisor.
@@ -10,7 +6,7 @@ Slide 1: Docker Logo:
 
 So why should I care about Docker? Isn't it only for Linux developers? The fact is, with the advent of WSL, and especially since the release of WSL 2, Docker is becoming more and more accessible to Windows developers too.
 
-### II. Some advantages of the Docker ecosystem:
+## II. Some advantages of the Docker ecosystem:
 - Light-weight Compartmentalization with external visibility
   - Forces sysadmins to properly deal with the separation of data from the app (backups).
   - Exploits in your app (or a sibling container) won't take down the host.
@@ -32,14 +28,14 @@ So why should I care about Docker? Isn't it only for Linux developers? The fact 
   - Manage your containers directly with [Docker Swarm](https://docs.docker.com/engine/swarm/) or [Kubernetes](https://kubernetes.io/), with [Portainer](https://www.portainer.io/), or with cloud ecosystems like OpenStack, MS Azure, or AWS.
   - Some of these cloud services [directly integrate](https://www.docker.com/partners) with Docker.
 
-### III. Some specific use-cases for Docker:
+## III. Some specific use-cases for Docker:
 - Flexible development toolchains with image layers and snapshots (Gitea, Seq)
   - Share configuration among team members and customize from that.
 - "Throw-away" build environments (CI/CD pipelines)
 - Portable and scalable testing environments (NPM, Postman (`newman`)).
 - "One-click", pre-configured software installs.
 
-### IV. Basic Docker Components
+## IV. Basic Docker Components
 Here's the high-level difference between `docker` commands, `.dockerfile`, and Docker Compose:
 - `docker` commands are for manually building images and running containers
 - `.dockerfile` is the script used to build docker images from the contents of a given directory.
@@ -47,7 +43,7 @@ Here's the high-level difference between `docker` commands, `.dockerfile`, and D
   - They're not a one-to-one correlation to `docker` commands.
   - Often used to manage clusters of dependent images. (The cloud platforms mentioned earlier would rely on Docker Compose.)
 
-### V. Build Demo (for the Devs)
+## V. Build Demo (for the Devs)
 Build the docker image via code (`.dockerfile`)
 I. Build on SG's dev PC
 - Simple `docker build` from existing binaries (used for CI pipelines)
@@ -70,3 +66,6 @@ II. Build from 'remote' Git repository
 - Image will `dotnet restore` and build code.
 - Note: Be sure to clean up source when done.
 - Image will run resulting binaries
+
+## VI. Deployment Demo (for the SysAdmins)
+By Norman King. Notes may be available later.
