@@ -29,6 +29,8 @@ As our title implies, today we'll be focusing primarily on the latter category.
     - The domain itself (the problem you are solving) should basically be set in stone already.
 - We're interested in testing the domain layer.
   - These will be the functions that make up your *sub*s, *classes*, *services, *modules*, etc.
+  - Does not include storage or UI-layer testing.
+    - Exception to UI is the MVU architecture, where most of the UI is considered part of the domain model.
 
 ## Test Scope
 - Now that we understand *what* we're testing, why does the scope of my test matter?
@@ -84,6 +86,6 @@ Some of this may be more applicable to strongly typed languaes. Those of you JS 
 - https://codeblocks.olivetree.software/t/getting-people-interested-in-testing/471
 - https://lispcast.com/what-is-the-onion-architecture/
 - https://mozaicworks.com/blog/functional-programming-makes-domain-driven-design-easy/
-- https://elmish.github.io/elmish (MVU for F# WPF) - MVU architecture allows us to include the UI in the unit-testable domain as well.
+- https://elmish.github.io/elmish (MVU for F# WPF)
 - https://github.com/louthy/language-ext
 
