@@ -32,8 +32,8 @@ namespace Repository
 
         public static Dictionary<Guid, VendorProduct> MakeVendorProducts() =>
             new List<VendorProduct>() {
-                new VendorProduct(Guid.Parse("abb64b36-b0f3-43e6-87fd-a0f8fe7e5409"), "", Version.Parse("4.2")),
-                new VendorProduct(Guid.Parse("69668938-a906-45d0-b109-dfcccfaf2c47"), "", Version.Parse("3.9"))
+                new VendorProduct(Guid.Parse("abb64b36-b0f3-43e6-87fd-a0f8fe7e5409"), "", Version.Parse("4.2"), Version.Parse("1.0"), Version.Parse("1.9")),
+                new VendorProduct(Guid.Parse("69668938-a906-45d0-b109-dfcccfaf2c47"), "", Version.Parse("3.9"), Version.Parse("2.0"), Version.Parse("2.9"))
             }.ToDictionary(vp => vp.Id);
     }
 }
