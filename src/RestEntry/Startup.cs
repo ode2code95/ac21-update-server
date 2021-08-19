@@ -1,4 +1,7 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Autofac;
 using Autofac.Configuration;
@@ -100,7 +103,7 @@ namespace RestEntry
         /// with Autofac. This runs after ConfigureServices so the things
         /// here will override registrations made in ConfigureServices.
         /// Don't build the container; that gets done for you.
-        /// 
+        ///
         /// See: https://github.com/drwatson1/AspNet-Core-REST-Service/wiki#dependency-injection
         /// </remarks>
         public void ConfigureContainer(ContainerBuilder builder)
@@ -118,7 +121,7 @@ namespace RestEntry
         /// This only gets called if your environment is Production. The
         /// default ConfigureContainer won't be automatically called if this
         /// one is called.
-        /// 
+        ///
         /// See: https://github.com/drwatson1/AspNet-Core-REST-Service/wiki#dependency-injection
         /// </remarks>
         public void ConfigureProductionContainer(ContainerBuilder builder)
@@ -156,7 +159,21 @@ namespace RestEntry
                 endpoints.MapHealthChecks(Constants.Health.EndPoint); // See: https://github.com/drwatson1/AspNet-Core-REST-Service/wiki#health-checks
             });
 
-            logger.LogInformation("Server configuration is completed");
+            logger.LogDebug(PrintEnvironmentVariables());
+            logger.LogInformation("Server configuration is completed.");
+        }
+
+        public string PrintEnvironmentVariables()
+        {
+            var vars = Environment.GetEnvironmentVariables();
+            var keys = vars.Keys.Cast<string>().ToList();
+            var values = vars.Values.Cast<string>().ToList();
+            var printedVars = "Environment Variables\n                 ---------------------\n";
+            for (int i = 0; i < keys.Count; i++) {
+                printedVars += $"\t{keys[0]}: {values[i]}\n";
+            }
+
+            return $"{printedVars}\n\n";
         }
     }
 }
